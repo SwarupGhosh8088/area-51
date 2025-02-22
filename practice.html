@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        .container{
+            background-color: blue;
+            height: 450px;
+            width: 300px;
+            border-radius: 20px;
+            padding-left: 80px;
+            margin-left: 50px;
+            padding-top: 20px;
+            
+        }
+       .circle
+       {
+        height: 200px;
+        width: 200px;
+        background-color: rgb(201, 112, 10);
+        border-radius: 100px;
+ 
+       }
+       .click
+       {
+        background-color: rgb(150, 12, 12);
+        width: 200px;
+        height: 30px;
+        border-radius: 17px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+       }
+       .user,.pass
+       {
+        width: 200px;
+        height: 30px;
+        border-radius: 17px;
+        background-color: bisque;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: medium;
+        padding-left: 10px;
+
+       }
+       .error{
+        background-color: blue;
+        height: 50px;
+        width: 250px;
+        align-content: center;
+        color: rgb(211, 18, 18);
+
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div id="circle" class="circle"></div>
+        <br>
+        <input type="text" id="user" placeholder="   Email" class="user">
+        <br>
+        <br>
+        <input type="password" id="pass" placeholder="   Password" class="pass">
+        <br>
+        <br>
+        <button id="click"  class="click">Login</button>
+        <br>
+        <div  id="error" class="error"></div>
+        
+    </div>
+
+    <script>
+        let userName={
+
+        email: "sunny",
+        pass:"abc@123"
+    }
+        let click=document.getElementById("click");
+        let error=document.getElementById("error");
+
+        let circle=document.getElementById("circle");
+
+        click.addEventListener("click",function()
+    {
+        let user=document.getElementById("user").value;
+        let pass=document.getElementById("pass").value;
+        
+
+    if(user===userName.email && pass===userName.pass)
+    {
+        error.textContent="Login SucessFull";
+        circle.style.backgroundImage="url('https://media.licdn.com/dms/image/v2/D4D03AQEicgXePwNhuA/profile-displayphoto-shrink_200_200/B4DZS9E3vsH0Ag-/0/1738338959804?e=1745452800&v=beta&t=uQsiix-DEnHujlAtEBwSJccQmQ_4U_yx25VTjt-ztII')";
+        window.location.href="\ www.youtube.com"
+        
+    }
+    else if(user==="" || pass ==="")
+    {
+        error.textContent="Please Enter The Pass or User email";
+       
+        
+        
+    }
+    else{
+        error.textContent="UserEmail Or Password Is Wrong.";
+      
+    }
+
+    });
+       
+      
+        
+    </script>
+</body>
+</html>
+
+
